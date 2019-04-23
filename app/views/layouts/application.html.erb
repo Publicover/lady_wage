@@ -11,6 +11,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'partials/header' %>
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <div class='wrapper'>
+      <%= yield %>
+    </div>
+    
+    <%= render 'partials/footer' %>
   </body>
 </html>
