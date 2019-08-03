@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_03_182843) do
+ActiveRecord::Schema.define(version: 2019_08_03_191649) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,11 +28,15 @@ ActiveRecord::Schema.define(version: 2019_08_03_182843) do
   end
 
   create_table "wages", force: :cascade do |t|
-    t.integer "annual_wage"
+    t.integer "project_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profession"
     t.integer "projects_per_year"
+    t.float "annual_total"
+    t.integer "man_wage"
+    t.integer "wage_difference"
+    t.integer "difference_per_year"
   end
 
 end

@@ -5,7 +5,7 @@
   <hr />
   <p>
     So far, we've discovered that women should be asking for <br />
-    another <strong><%= wage_difference_sum(@wages.sum(:annual_wage)) %></strong> annually.
+    another <strong><%= number_to_currency(@wages.sum(:wage_difference)) %></strong> annually.
   </p>
   <p>
     <%= link_to "Make sure you're getting what you're worth.", new_wage_path %>

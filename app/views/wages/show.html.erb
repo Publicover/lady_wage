@@ -3,12 +3,14 @@
   <p>Find me in app/views/wages/show.html.erb</p>
   <hr />
   <br />
-  You said you're making <strong><%= number_to_currency(@wage.annual_wage) %></strong> per project,<br />
-  but you should be making <strong><%= number_to_currency(man_wage(@wage.annual_wage)) %></strong>.
+  You said you're making <strong><%= number_to_currency(@wage.project_rate) %></strong> per project,<br />
+  but you should be making <strong><%= number_to_currency(@wage.man_wage) %></strong>.
   <br />
-  <h3 id='show-difference'>That's a difference of <%= number_to_currency(show_difference(man_wage(@wage.annual_wage), @wage.annual_wage)) %>.</h3>
+  <h3 id='show-difference'>That's a difference of <%= number_to_currency(@wage.wage_difference) %>.</h3>
   <h5>That means you're missing out on about
-    <%= number_to_currency(show_difference(man_wage(@wage.annual_wage), @wage.annual_wage) * @wage.projects_per_year) %> per year.</h5>
+    <%= number_to_currency(@wage.difference_per_year) %> per year<br />
+      when you make <%= number_to_currency(@wage.annual_total) %>  per year.
+  </h5>
   <p><%= link_to "Let's change that.", 'http://tinypinata.xyz/' %></p>
 </center>
 <%= link_to 'Do it again', new_wage_path %><br />

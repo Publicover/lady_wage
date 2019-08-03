@@ -45,6 +45,7 @@ class WagesController < ApplicationController
   end
 
   def wage_params
-    params.require(:wage).permit(:profession, :annual_wage, :projects_per_year)
+    params.require(:wage).permit(:profession, :project_rate, :projects_per_year,
+      :annual_total, :man_wage, :wage_difference, :difference_per_year)
   end
 end
