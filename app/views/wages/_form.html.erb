@@ -1,4 +1,9 @@
 <%= form_with model: @wage do |f| %>
-  <%= f.number_field :annual_wage %>
+  <p>I am a <%= f.select :profession, [['UI Designer', 'UI Designer'],
+    ['UX Designer', 'UX Designer'], ['Graphic Designer', 'Graphic Designer'],
+    ['Copywriter', 'Copywriter'], ['Copy Editor', 'Copy Editor'], ['Artist', 'Artist'],
+    ['Voiceover Actor', 'Voiceover Actor'], ['Audio Engineer', 'Audio Engineer']] %></p>
+  <p>Who charges <%= f.number_field :annual_wage %> per project. </p>
+  <p>I do about <%= f.number_field :projects_per_year %> projects per year.</p>
   <%= f.submit %>
 <% end %>

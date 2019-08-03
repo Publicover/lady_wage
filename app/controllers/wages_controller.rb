@@ -19,7 +19,7 @@ class WagesController < ApplicationController
     @wage = Wage.new(wage_params)
 
     if @wage.save
-      redirect_to wage_path(@wage), notice: 'That worked.'
+      redirect_to wage_path(@wage), notice: 'Thanks for sharing.'
     else
       render 'new', notice: 'Something went wrong'
     end
@@ -45,6 +45,6 @@ class WagesController < ApplicationController
   end
 
   def wage_params
-    params.require(:wage).permit(:annual_wage)
+    params.require(:wage).permit(:profession, :annual_wage, :projects_per_year)
   end
 end
