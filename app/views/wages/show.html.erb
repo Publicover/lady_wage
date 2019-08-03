@@ -1,0 +1,13 @@
+<center>
+  <h1>Wages#show</h1>
+  <p>Find me in app/views/wages/show.html.erb</p>
+  <hr />
+  <br />
+  You said you're making <strong><%= number_to_currency(@wage.annual_wage) %></strong> yearly,<br />
+  but you should be making <strong><%= number_to_currency(man_wage(@wage.annual_wage)) %></strong>.
+  <br />
+  <h3 id='show-difference'>That's a difference of <%= number_to_currency(show_difference(man_wage(@wage.annual_wage), @wage.annual_wage)) %></h3>
+  <p><%= link_to "Let's change that.", 'http://tinypinata.xyz/' %></p>
+</center>
+<%= link_to 'Do it again', new_wage_path %><br />
+<%= link_to 'Back to the dashboard', wages_path %>

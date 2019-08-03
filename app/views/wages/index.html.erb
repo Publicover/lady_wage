@@ -1,0 +1,13 @@
+<center>
+  <h1>Wages#index</h1>
+  <p>Find me in app/views/wages/index.html.erb</p>
+  <br />
+  <hr />
+  <p>
+    So far, we've discovered that women should be asking for <br />
+    another <strong><%= wage_difference_sum(@wages.sum(:annual_wage)) %></strong> annually.
+  </p>
+  <p>
+    <%= link_to "Make sure you're getting what you're worth.", new_wage_path %>
+  </p>
+</center>
